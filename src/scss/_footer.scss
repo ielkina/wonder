@@ -1,0 +1,14 @@
+.footer {
+  &__content {
+    padding: 33px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__copy {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+  }
+}

@@ -1,0 +1,181 @@
+::-webkit-scrollbar {
+  width: 0;
+}
+
+*::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.container {
+  @include container(15);
+}
+
+.sr-only {
+  @include sr-only();
+}
+
+body {
+  @include safe-font($font-family);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fff;
+  letter-spacing: 0.03em;
+  background-color: $bg;
+  @include font-media(16, 16);
+  // background-image: linear-gradient(180deg,
+  //     hsl(0deg 0% 0%) 0%,
+  //     hsl(78deg 100% 1%) 49%,
+  //     hsl(71deg 73% 3%) 76%);
+}
+
+.title {
+  font-weight: 400;
+  line-height: 1.2;
+  font-size: 50px;
+  text-transform: uppercase;
+  @include font-media(50, 24);
+}
+
+.logo {
+  &__img {
+    margin-right: 30px;
+  }
+
+  &__text {
+    text-transform: uppercase;
+  }
+}
+
+.hero__title {
+  font-weight: 400;
+  font-size: 200px;
+  @include font-media(200, 50);
+}
+
+.btn-bg {
+  padding: 0;
+  line-height: 1;
+  color: $bg;
+  background-color: #fff;
+  @include btn-bg-actions();
+}
+
+// .logo {
+//   display: inline-block;
+//   border-radius: 5px;
+//   flex-shrink: 0;
+//   @include logo-actions();
+
+//   &__img {
+//     width: 200px;
+//     // width: 100%;
+//     height: 39px;
+//   }
+// }
+
+// .link {
+//   border-radius: 5px;
+//   @include link-actions();
+
+//   &--active {
+//     color: $orange-900;
+//   }
+// }
+
+// .btn-bg {
+//   padding: 0;
+//   line-height: 1;
+//   color: #fff;
+//   border-radius: 5px;
+//   background-color: $orange-900;
+//   @include btn-bg-actions();
+// }
+
+// .lock {
+//   overflow: hidden;
+//   position: relative;
+//   transition: all 0.3s ease-in-out;
+
+//   .hero__link {
+//     z-index: -1;
+//   }
+
+//   .filter-select {
+//     z-index: -1;
+//   }
+
+//   .filter-number {
+//     z-index: -1;
+//   }
+
+//   .product__item {
+//     z-index: -1;
+//   }
+
+//   .product__order-box {
+//     position: relative;
+//     z-index: -1;
+//   }
+// }
+
+// .card {
+//   width: 100%;
+//   min-height: 299px;
+//   padding: 20px 9px 22px;
+//   display: flex;
+//   flex-direction: column;
+//   text-align: center;
+//   background-color: #fff;
+//   border-radius: 5px;
+//   box-shadow: 0 0 0 1px $silver-200;
+//   transition: box-shadow 0.3s ease-in-out;
+
+//   &:hover {
+//     box-shadow: 0 0 2px 1px $orange-900;
+//   }
+
+//   &__link {
+//     flex-grow: 1;
+//     margin-bottom: 10px;
+//   }
+
+//   &__img {
+//     margin: 0 auto;
+//     object-fit: contain;
+//     margin-bottom: 10px;
+//   }
+
+//   &__alt {
+//     padding: 0;
+//     word-spacing: 1px;
+//     font-weight: 400;
+//     font-size: 15px;
+//     @include line-height(15, 18);
+//   }
+
+//   &__price {
+//     font-weight: 500;
+//     font-size: 15px;
+//     line-height: 1.4;
+//     margin-bottom: 10px;
+//   }
+
+//   &__btn {
+//     margin: 0 auto;
+//     padding: 6px 16px;
+//     font-weight: 400;
+//     font-size: 14px;
+//     line-height: 1.3;
+//   }
+// }

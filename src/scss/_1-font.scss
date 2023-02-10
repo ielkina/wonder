@@ -1,0 +1,40 @@
+//шрифты
+$sans-serif: sans-serif;
+$serif: serif;
+//безопасные шрифты
+$helvetica: 'Helvetica';
+$arial: 'Arial';
+$verdata: 'Verdana';
+
+
+@mixin font-face($font-family, $url, $weight) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('../font/#{$url}.woff2') format('woff2'),
+    url('../font/#{$url}.woff') format('woff');
+    font-weight: #{$weight};
+    font-display: swap;
+    font-style: normal;
+  }
+}
+
+// @include font-face($font-family, #{$font-family}-Light, 300);
+@include font-face($font-family, #{$font-family}-Regular, 400);
+// @include font-face($font-family, #{$font-family}-Medium, 500);
+// @include font-face($font-family, #{$font-family}-Bold, 700);
+
+@mixin safe-font($font-family) {
+  font-family: '#{$font-family}',
+  $helvetica,
+  $arial,
+  $sans-serif;
+}
+
+@mixin font-media($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $addMobSize: $addSize + $addSize * 0.7;
+
+  @media (max-width: 1130px) {
+    font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth}));
+  }
+}

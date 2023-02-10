@@ -1,0 +1,34 @@
+.header {
+
+  &__nav {
+    padding: 39px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu {}
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    &:first-child {
+      margin-right: 45px;
+    }
+  }
+
+  &__link {
+    text-transform: uppercase;
+    @include link-line(#fff);
+  }
+}
