@@ -1,29 +1,93 @@
 .hero {
-
-
-  &__content {
-    min-height: 655px;
-    background-image: url(../img/decore/image6.png);
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: 556px 655px;
-    // box-shadow: 0px 0px 100px 21px #0b0d02;
+  &__box {
     display: flex;
-    flex-direction: column;
-    // align-items: center;
+    align-items: center;
+    justify-content: space-between;
+
+    @include r(1066) {
+      flex-direction: column;
+    }
   }
 
-  &__title {}
+  &__title {
+    font-weight: 400;
+    font-size: 200px;
+    line-height: 1.2;
+    letter-spacing: normal;
+    @include font-media(200, 50);
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: transform 0.8s, opacity 0.8s ease-in-out;
+  }
+
+  &__title.active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.4s;
+  }
+
 
   &__text {
     font-size: 20px;
-    max-width: 497px;
+    max-width: 470px;
     margin-bottom: 67px;
+    transform: translate(120%);
+    opacity: 0;
+    transition: transform 0.8s, opacity 0.8s ease-in-out;
+  }
+
+  &__text.active {
+    transform: translate(0%);
+    opacity: 1;
+    transition: all 0.8s ease 0.8s;
   }
 
   &__btn {
-    max-width: 288px;
-    padding: 9px 112px;
+    padding: 15px 115px;
     text-transform: uppercase;
+    transform: translate(0px, 200%);
+    opacity: 0;
+    transition: color 0.3s,
+      box-shadow 0.3s,
+      background-color 0.3s, transform 0.8s, opacity 0.8s ease-in-out;
+
+    @include r(1066) {
+      margin-bottom: 30px;
+    }
+    @include r(574) {
+      padding: 15px 50px;
+    }
   }
+
+  &__btn.active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: color 0.3s,
+      box-shadow 0.3s,
+      background-color 0.3s, transform 0.8s, opacity 0.8s ease 1.2s;
+  }
+
+  &__img {
+    max-width: 556px;
+    width: 100%;
+    box-shadow: 9px 38px 30px 0px #0c0e03;
+    transform: translate(200%);
+    opacity: 0;
+    transition: transform 0.8s, opacity 0.8s ease-in-out;
+
+    &.active {
+      transform: translate(0%);
+      opacity: 1;
+      transition: all 0.8s ease 1.2s;
+    }
+
+    @include r(1362) {
+      max-width: 400px;
+    }
+    @include r(700) {
+      max-width: 200px;
+    }
+
+  }
+
 }

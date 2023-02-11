@@ -13,7 +13,4 @@ gulp
 6. удалить ненужный пакет 
 npm uninstall less
 
-# SimpleFood
-
-https://ielkina.github.io/SimpleFood/
 # wonder

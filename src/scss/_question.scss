@@ -1,0 +1,81 @@
+.question {
+  max-width: 937px;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 191px;
+
+  @include r(1278) {
+    padding-bottom: 100px;
+  }
+
+  @include r(375) {
+    padding-bottom: 60px;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    transform: translate(0, 120%);
+    opacity: 0;
+    overflow: hidden;
+    transition: transform 0.8s, opacity 0.8s ease-in-out;
+
+    &.active {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+  }
+
+  &__box {
+    max-width: 612px;
+    transform: translate(0, 120%);
+    opacity: 0;
+    overflow: hidden;
+    transition: transform 0.8s, opacity 0.8s ease-in-out;
+
+    &.active {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+  }
+
+  &__box-title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 20px;
+    display: block;
+    pointer-events: auto;
+    position: relative;
+    // padding-right: 25px;
+
+    &::after {
+      position: absolute;
+      content: '';
+      background-image: url(../img/svg/arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      transition: all 0.5s ease-in-out;
+    }
+
+    &.open {
+      &::after {
+        rotate: 90deg;
+      }
+    }
+  }
+
+
+  &__box-text {
+    max-width: 492px;
+    margin-bottom: 45px;
+
+    &.open {
+      display: none;
+    }
+  }
+}

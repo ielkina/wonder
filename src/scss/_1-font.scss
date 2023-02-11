@@ -18,10 +18,10 @@ $verdata: 'Verdana';
   }
 }
 
-// @include font-face($font-family, #{$font-family}-Light, 300);
+@include font-face($font-family, #{$font-family}-Light, 300);
 @include font-face($font-family, #{$font-family}-Regular, 400);
 // @include font-face($font-family, #{$font-family}-Medium, 500);
-// @include font-face($font-family, #{$font-family}-Bold, 700);
+@include font-face($font-family, #{$font-family}-Bold, 700);
 
 @mixin safe-font($font-family) {
   font-family: '#{$font-family}',

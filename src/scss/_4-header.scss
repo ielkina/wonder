@@ -5,21 +5,47 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: transform 0.8s,
+      opacity 0.8s ease-in-out;
+  }
+
+  &__nav.active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0;
   }
 
   &__logo {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
 
-  &__menu {}
+    @include r(490) {
+      margin-right: 15px;
+    }
+
+  }
+}
+
+.logo {
+  font-size: 14px;
+  text-transform: uppercase;
+
+  &__img {
+    margin-right: 30px;
+  }
 }
 
 .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include r(458) {
+    display: block;
+  }
 
   &__item {
     &:first-child {
@@ -28,6 +54,7 @@
   }
 
   &__link {
+    font-size: 14px;
     text-transform: uppercase;
     @include link-line(#fff);
   }

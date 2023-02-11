@@ -1,0 +1,89 @@
+.cristal {
+  padding-bottom: 206px;
+
+  @include r(1278) {
+    padding-bottom: 100px;
+  }
+
+  @include r(375) {
+    padding-bottom: 60px;
+  }
+
+  &__inner {
+    max-width: 719px;
+    margin: 0 auto;
+    max-width: 937px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 99px;
+
+    @include r(375) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 92px;
+    transform: translate(0, 120%);
+    opacity: 0;
+    overflow: hidden;
+    transition: transform 0.8s, opacity 0.8s ease-in-out;
+
+    &.active {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+
+    @include r(912) {
+      text-align: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+
+    @include r(912) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+  &__text {
+    max-width: 283px;
+    margin-right: 38px;
+    transform: translate(0, 120%);
+    opacity: 0;
+    overflow: hidden;
+    transition: transform 0.8s, opacity 0.8s ease-in-out;
+
+    &.active {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+
+    @include r(912) {
+      margin-right: 0;
+    }
+  }
+
+  &__img {
+    max-width: 398px;
+    min-height: 335px;
+    object-fit: contain;
+    transform: scale(0);
+    transition: all 0.8s ease 0s;
+
+    &.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @include r(912) {
+      margin-bottom: 30px;
+    }
+
+    @include r(912) {
+      max-width: 300px;
+    }
+  }
+}

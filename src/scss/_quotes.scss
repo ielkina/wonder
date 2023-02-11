@@ -1,13 +1,108 @@
 .quotes {
   padding: 134px 0;
 
-  &__name {}
+  @include r(512) {
+    padding: 60px 0;
+  }
+
+  &__figure {
+    max-width: 749px;
+    margin: 0 auto;
+    margin-bottom: 119px;
+    transform: translate(0, 120%);
+    opacity: 0;
+    overflow: hidden;
+    transition: transform 0.5s, opacity 0.5s ease-in-out;
+
+    &.active {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+
+    @include r(738) {
+      max-width: 500px;
+    }
+
+    @include r(512) {
+      margin-bottom: 60px;
+    }
+  }
+
+
+  &__text {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__author {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
 
   &__description {
     display: flex;
+    max-width: 749px;
+    margin: 0 auto;
+
+    @include r(738) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
-  &__img {}
+  &__img {
+    max-width: 398px;
+    margin-right: 31px;
+    transform: scale(0);
+    transition: all 0.8s ease 0s;
 
-  &__text {}
+    &.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @include r(738) {
+      margin-bottom: 30px;
+      margin-right: 0;
+    }
+    @include r(504) {
+      max-width: 300px;
+    }
+  }
+
+
+
+  &__detail {
+    max-width: 288px;
+    word-spacing: 0px;
+    line-height: 1.5;
+
+    & p:nth-child(1) {
+      margin-bottom: 15px;
+      transform: translate(0, 120%);
+      opacity: 0;
+      overflow: hidden;
+      transition: transform 0.5s, opacity 0.5s ease-in-out;
+    }
+
+    & p:nth-child(1).active {
+      transform: translate(0%);
+      opacity: 1;
+      transition: all 0.8s ease 0.4s;
+    }
+
+    & p:nth-child(2) {
+      display: block;
+      transform: translate(0, 120%);
+      opacity: 0;
+      overflow: hidden;
+      transition: transform 0.5s, opacity 0.5s ease-in-out;
+    }
+
+    & p:nth-child(2).active {
+      transform: translate(0%);
+      opacity: 1;
+      transition: all 0.8s ease 0.8s;
+    }
+  }
 }

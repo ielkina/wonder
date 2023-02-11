@@ -1,0 +1,92 @@
+@import '../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox';
+
+
+.public {
+  max-width: 937px;
+  padding-bottom: 187px;
+  margin: 0 auto;
+    @include r(1278) {
+        padding-bottom: 100px;
+      }
+
+  &__title {
+    margin-bottom: 92px;
+    transform: translate(0, 120%);
+    opacity: 0;
+    overflow: hidden;
+    transition: transform 0.8s, opacity 0.8s ease-in-out;
+  }
+
+  &__title.active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+
+
+  &__inner {
+    display: flex;
+
+    @include r(846) {
+      flex-direction: column;
+      // justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    max-width: 398px;
+
+
+
+    &:nth-child(1) {
+      margin-right: 31px;
+
+      @include r(846) {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+
+      .public__img.active {
+        opacity: 1;
+        transform: scale(1);
+        transition: all 0.8s ease 0.4s;
+      }
+
+      .public__text.active {
+        transform: translate(0px, 0px);
+        opacity: 1;
+        transition: all 0.8s ease 0.4s;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-right: 31px;
+
+      .public__img.active {
+        opacity: 1;
+        transform: scale(1);
+        transition: all 0.8s ease 0.8s;
+      }
+
+      .public__text.active {
+        transform: translate(0px, 0px);
+        opacity: 1;
+        transition: all 0.8s ease 0.8s;
+      }
+    }
+  }
+
+  &__img {
+    margin-bottom: 20px;
+    transform: scale(0);
+    transition: all 0.8s ease 0s;
+  }
+
+  &__text {
+    max-width: 290px;
+    transform: translate(0, 120%);
+    opacity: 0;
+    overflow: hidden;
+    transition: transform 0.8s, opacity 0.8s ease-in-out;
+  }
+}

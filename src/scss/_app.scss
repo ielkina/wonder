@@ -1,0 +1,80 @@
+.app {
+  text-align: center;
+  padding-bottom: 132px;
+
+  @include r(642) {
+    padding-bottom: 60px;
+  }
+
+  &__logo {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #AC693F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  &__logo-img {
+    width: 53px;
+    height: 53px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    margin-bottom: 93px;
+
+    @include r(504) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 19px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+
+    @include r(504) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    max-width: 204px;
+
+    &:nth-child(1) {
+      margin-right: 21px;
+
+      @include r(504) {
+        margin-right: 0;
+        margin-bottom: 21px;
+      }
+    }
+  }
+
+  &__link {}
+
+  &__img {
+    max-width: 204px;
+  }
+
+  &__alt {
+    display: inline-block;
+    font-size: 14px;
+    max-width: 459px;
+  }
+}
